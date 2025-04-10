@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tartaros-Logger", "Tartaros-Logger.csproj", "{1BE22D6B-BB64-492C-8815-0F89B57BC2FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BE22D6B-BB64-492C-8815-0F89B57BC2FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BE22D6B-BB64-492C-8815-0F89B57BC2FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BE22D6B-BB64-492C-8815-0F89B57BC2FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BE22D6B-BB64-492C-8815-0F89B57BC2FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AC64115-B264-4636-B550-EC3FEAE1A711}
+	EndGlobalSection
+EndGlobal
