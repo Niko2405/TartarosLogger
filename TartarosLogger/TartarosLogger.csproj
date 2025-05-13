@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyVersion>1.0.0.4</AssemblyVersion>
+    <FileVersion>1.0.0.4</FileVersion>
+    <Copyright>Niko2405</Copyright>
+    <Title>TartarosLogger</Title>
+    <Description>Basic Logger System for my projects</Description>
+    <PackageProjectUrl>https://github.com/Niko2405/Tartaros-Logger</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Niko2405/Tartaros-Logger</RepositoryUrl>
+    <PackageTags>Logger</PackageTags>
+    <Version>1.0.0.4</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Niko2405</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE" Pack="true" PackagePath="LICENSE"/>
+  </ItemGroup>
+  
+  <PropertyGroup>
+    <PackageLicenseFile>..\LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <IsAotCompatible>False</IsAotCompatible>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <IsAotCompatible>False</IsAotCompatible>
+  </PropertyGroup>
+
+</Project>

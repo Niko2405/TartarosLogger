@@ -1,4 +1,4 @@
-﻿namespace TLogger
+﻿namespace TartarosLogger
 {
 	public class Logger
 	{
