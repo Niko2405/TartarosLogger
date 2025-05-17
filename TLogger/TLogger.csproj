@@ -13,19 +13,9 @@
     <RepositoryUrl>https://github.com/Niko2405/Tartaros-Logger</RepositoryUrl>
     <PackageTags>Logger</PackageTags>
     <Version>1.0.0.4</Version>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Niko2405</Authors>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\LICENSE" Pack="true" PackagePath="LICENSE"/>
-  </ItemGroup>
-  
-  <PropertyGroup>
-    <PackageLicenseFile>..\LICENSE</PackageLicenseFile>
-  </PropertyGroup>
-
-  
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <IsAotCompatible>False</IsAotCompatible>
