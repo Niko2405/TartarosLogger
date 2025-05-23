@@ -1,8 +1,8 @@
-﻿namespace TLogger
+﻿namespace TartarosLogger
 {
 	public class Logger
 	{
-		public static readonly string Version = "0.6b";
+		public static readonly string Version = "1.6.2";
 		
 		/// <summary>
 		/// Enable Debug logging
