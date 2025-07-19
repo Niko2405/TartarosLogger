@@ -1,9 +1,13 @@
-﻿namespace TartarosLogger
+﻿using static System.Net.Mime.MediaTypeNames;
+
+namespace TartarosLogger
 {
 	public class Logger
 	{
-		public static readonly string Version = "1.6.3";
-		
+		public static readonly string Version = "1.6.4";
+		public static string LogPath = "./";
+		public static bool WriteLogInFile = true;
+
 		/// <summary>
 		/// Enable Debug logging
 		/// </summary>
@@ -27,7 +31,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [INFO]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [INFO]:\t{text}\n");
+			}
 		}
 		
 		/// <summary>
@@ -47,7 +54,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [INFO]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [INFO]:\t{text}\n");
+			}	
 		}
 		
 		/// <summary>
@@ -67,7 +77,11 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [INFO]:\t{text}\n");
+
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [INFO]:\t{text}\n");
+			}
 		}
 		
 		/// <summary>
@@ -87,7 +101,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [INFO]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [INFO]:\t{text}\n");
+			}
 		}
 		#endregion
 
@@ -109,7 +126,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [WARN]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [WARN]:\t{text}\n");
+			}
 		}
 		
 		/// <summary>
@@ -129,7 +149,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [WARN]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [WARN]:\t{text}\n");
+			}
 		}
 		/// <summary>
 		/// Warning log
@@ -148,7 +171,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [WARN]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [WARN]:\t{text}\n");
+			}
 		}
 		
 		/// <summary>
@@ -168,7 +194,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [WARN]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [WARN]:\t{text}\n");
+			}
 		}
 		#endregion
 
@@ -190,7 +219,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [ERROR]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [ERROR]:\t{text}\n");
+			}
 		}
 		
 		/// <summary>
@@ -210,7 +242,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [ERROR]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [ERROR]:\t{text}\n");
+			}
 		}
 		
 		/// <summary>
@@ -230,7 +265,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [ERROR]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [ERROR]:\t{text}\n");
+			}
 		}
 		
 		/// <summary>
@@ -250,7 +288,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [ERROR]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [ERROR]:\t{text}\n");
+			}
 		}
 		#endregion
 
@@ -275,7 +316,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [DEBUG]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [DEBUG]:\t{text}\n");
+			}
 		}
 		
 		/// <summary>
@@ -298,7 +342,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [DEBUG]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [DEBUG]:\t{text}\n");
+			}
 		}
 		
 		/// <summary>
@@ -321,7 +368,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [DEBUG]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [DEBUG]:\t{text}\n");
+			}
 		}
 		
 		/// <summary>
@@ -344,7 +394,10 @@
 
 			ResetColorsToDefault();
 
-			File.AppendAllTextAsync($"latest.log", $"{GetCurrentTime()} [DEBUG]:\t{text}\n");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [DEBUG]:\t{text}\n");
+			}
 		}
 		#endregion
 		
@@ -358,6 +411,10 @@
 			Console.BackgroundColor = ConsoleColor.Black;
 			Console.ForegroundColor = ConsoleColor.Magenta;
 			Console.WriteLine($"======================[ {title} ]======================");
+			if (WriteLogInFile)
+			{
+				File.AppendAllTextAsync($"{LogPath}latest.log", $"======================[ {title} ]======================");
+			}
 			ResetColorsToDefault();
 		}
 		
@@ -368,7 +425,7 @@
 		{
 			try
 			{
-				File.Delete("latest.log");
+				File.Delete($"{LogPath}latest.log");
 			}
 			catch (Exception e)
 			{
