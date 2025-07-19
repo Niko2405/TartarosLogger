@@ -2,7 +2,7 @@
 {
 	public class Logger
 	{
-		public static readonly string Version = "1.6.2";
+		public static readonly string Version = "1.6.3";
 		
 		/// <summary>
 		/// Enable Debug logging
@@ -268,7 +268,7 @@
 
 			Console.Write($"{GetCurrentTime()} [");
 
-			Console.ForegroundColor = ConsoleColor.DarkBlue;
+			Console.ForegroundColor = ConsoleColor.Blue;
 			Console.Write("DEBUG");
 			Console.ForegroundColor = ConsoleColor.White;
 			Console.WriteLine("]:\t" + text);
@@ -291,7 +291,7 @@
 
 			Console.Write($"{GetCurrentTime()} [");
 
-			Console.ForegroundColor = ConsoleColor.DarkBlue;
+			Console.ForegroundColor = ConsoleColor.Blue;
 			Console.Write("DEBUG");
 			Console.ForegroundColor = ConsoleColor.White;
 			Console.WriteLine("]:\t" + text);
@@ -314,7 +314,7 @@
 
 			Console.Write($"{GetCurrentTime()} [");
 
-			Console.ForegroundColor = ConsoleColor.DarkBlue;
+			Console.ForegroundColor = ConsoleColor.Blue;
 			Console.Write("DEBUG");
 			Console.ForegroundColor = ConsoleColor.White;
 			Console.WriteLine("]:\t" + text);
@@ -337,7 +337,7 @@
 
 			Console.Write($"{GetCurrentTime()} [");
 
-			Console.ForegroundColor = ConsoleColor.DarkBlue;
+			Console.ForegroundColor = ConsoleColor.Blue;
 			Console.Write("DEBUG");
 			Console.ForegroundColor = ConsoleColor.White;
 			Console.WriteLine("]:\t" + text);
