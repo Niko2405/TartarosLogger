@@ -1,10 +1,8 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-
-namespace TartarosLogger
+﻿namespace TartarosLogger
 {
 	public class Logger
 	{
-		public static readonly string Version = "1.6.4";
+		public static readonly string Version = "1.7.0";
 		public static string LogPath = "./";
 		public static bool WriteLogInFile = true;
 
@@ -18,77 +16,7 @@ namespace TartarosLogger
 		/// Info log
 		/// </summary>
 		/// <param name="text">Message</param>
-		public static void Info(string text)
-		{
-			ResetColorsToDefault();
-			
-			Console.Write($"{GetCurrentTime()} [");
-
-			Console.ForegroundColor = ConsoleColor.DarkGreen;
-			Console.Write("INFO");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine("]:\t" + text);
-
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [INFO]:\t{text}\n");
-			}
-		}
-		
-		/// <summary>
-		/// Info log
-		/// </summary>
-		/// <param name="text">Message</param>
-		public static void Info(int text)
-		{
-			ResetColorsToDefault();
-			
-			Console.Write($"{GetCurrentTime()} [");
-
-			Console.ForegroundColor = ConsoleColor.DarkGreen;
-			Console.Write("INFO");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine("]:\t" + text);
-
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [INFO]:\t{text}\n");
-			}	
-		}
-		
-		/// <summary>
-		/// Info log
-		/// </summary>
-		/// <param name="text">Message</param>
-		public static void Info(float text)
-		{
-			ResetColorsToDefault();
-			
-			Console.Write($"{GetCurrentTime()} [");
-
-			Console.ForegroundColor = ConsoleColor.DarkGreen;
-			Console.Write("INFO");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine("]:\t" + text);
-
-			ResetColorsToDefault();
-
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [INFO]:\t{text}\n");
-			}
-		}
-		
-		/// <summary>
-		/// Info log
-		/// </summary>
-		/// <param name="text">Message</param>
-		public static void Info(bool text)
+		public static void Info<T>(T text)
 		{
 			ResetColorsToDefault();
 			
@@ -113,75 +41,7 @@ namespace TartarosLogger
 		/// Warning log
 		/// </summary>
 		/// <param name="text">Message</param>
-		public static void Warn(string text)
-		{
-			ResetColorsToDefault();
-
-			Console.Write($"{GetCurrentTime()} [");
-
-			Console.ForegroundColor = ConsoleColor.DarkYellow;
-			Console.Write("WARN");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine("]:\t" + text);
-
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [WARN]:\t{text}\n");
-			}
-		}
-		
-		/// <summary>
-		/// Warning log
-		/// </summary>
-		/// <param name="text">Message</param>
-		public static void Warn(int text)
-		{
-			ResetColorsToDefault();
-
-			Console.Write($"{GetCurrentTime()} [");
-
-			Console.ForegroundColor = ConsoleColor.DarkYellow;
-			Console.Write("WARN");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine("]:\t" + text);
-
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [WARN]:\t{text}\n");
-			}
-		}
-		/// <summary>
-		/// Warning log
-		/// </summary>
-		/// <param name="text">Message</param>
-		public static void Warn(float text)
-		{
-			ResetColorsToDefault();
-
-			Console.Write($"{GetCurrentTime()} [");
-
-			Console.ForegroundColor = ConsoleColor.DarkYellow;
-			Console.Write("WARN");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine("]:\t" + text);
-
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [WARN]:\t{text}\n");
-			}
-		}
-		
-		/// <summary>
-		/// Warning log
-		/// </summary>
-		/// <param name="text">Message</param>
-		public static void Warn(bool text)
+		public static void Warn<T>(T text)
 		{
 			ResetColorsToDefault();
 
@@ -206,76 +66,7 @@ namespace TartarosLogger
 		/// Error log
 		/// </summary>
 		/// <param name="text">Message</param>
-		public static void Error(string text)
-		{
-			ResetColorsToDefault();
-
-			Console.Write($"{GetCurrentTime()} [");
-
-			Console.ForegroundColor = ConsoleColor.DarkRed;
-			Console.Write("ERROR");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine("]:\t" + text);
-
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [ERROR]:\t{text}\n");
-			}
-		}
-		
-		/// <summary>
-		/// Error log
-		/// </summary>
-		/// <param name="text">Message</param>
-		public static void Error(int text)
-		{
-			ResetColorsToDefault();
-
-			Console.Write($"{GetCurrentTime()} [");
-
-			Console.ForegroundColor = ConsoleColor.DarkRed;
-			Console.Write("ERROR");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine("]:\t" + text);
-
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [ERROR]:\t{text}\n");
-			}
-		}
-		
-		/// <summary>
-		/// Error log
-		/// </summary>
-		/// <param name="text">Message</param>
-		public static void Error(float text)
-		{
-			ResetColorsToDefault();
-
-			Console.Write($"{GetCurrentTime()} [");
-
-			Console.ForegroundColor = ConsoleColor.DarkRed;
-			Console.Write("ERROR");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine("]:\t" + text);
-
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [ERROR]:\t{text}\n");
-			}
-		}
-		
-		/// <summary>
-		/// Error log
-		/// </summary>
-		/// <param name="text">Message</param>
-		public static void Error(bool text)
+		public static void Error<T>(T text)
 		{
 			ResetColorsToDefault();
 
@@ -300,85 +91,7 @@ namespace TartarosLogger
 		/// Debug log
 		/// </summary>
 		/// <param name="text">Message</param>
-		public static void Debug(string text)
-		{
-			if (!DebugEnabled)
-				return;
-			
-			ResetColorsToDefault();
-
-			Console.Write($"{GetCurrentTime()} [");
-
-			Console.ForegroundColor = ConsoleColor.Blue;
-			Console.Write("DEBUG");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine("]:\t" + text);
-
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [DEBUG]:\t{text}\n");
-			}
-		}
-		
-		/// <summary>
-		/// Debug log
-		/// </summary>
-		/// <param name="text">Message</param>
-		public static void Debug(int text)
-		{
-			if (!DebugEnabled)
-				return;
-			
-			ResetColorsToDefault();
-
-			Console.Write($"{GetCurrentTime()} [");
-
-			Console.ForegroundColor = ConsoleColor.Blue;
-			Console.Write("DEBUG");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine("]:\t" + text);
-
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [DEBUG]:\t{text}\n");
-			}
-		}
-		
-		/// <summary>
-		/// Debug log
-		/// </summary>
-		/// <param name="text">Message</param>
-		public static void Debug(float text)
-		{
-			if (!DebugEnabled)
-				return;
-			
-			ResetColorsToDefault();
-
-			Console.Write($"{GetCurrentTime()} [");
-
-			Console.ForegroundColor = ConsoleColor.Blue;
-			Console.Write("DEBUG");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine("]:\t" + text);
-
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [DEBUG]:\t{text}\n");
-			}
-		}
-		
-		/// <summary>
-		/// Debug log
-		/// </summary>
-		/// <param name="text">Message</param>
-		public static void Debug(bool text)
+		public static void Debug<T>(T text)
 		{
 			if (!DebugEnabled)
 				return;
@@ -406,7 +119,7 @@ namespace TartarosLogger
 		/// Print Header with a title
 		/// </summary>
 		/// <param name="title"></param>
-		public static void PrintHeader(string title)
+		public static void PrintHeader<T>(T title)
 		{
 			Console.BackgroundColor = ConsoleColor.Black;
 			Console.ForegroundColor = ConsoleColor.Magenta;

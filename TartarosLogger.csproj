@@ -4,15 +4,15 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>1.0.6.4</AssemblyVersion>
-    <FileVersion>1.0.6.4</FileVersion>
+    <AssemblyVersion>1.0.7.0</AssemblyVersion>
+    <FileVersion>1.0.7.0</FileVersion>
     <Copyright>Niko2405</Copyright>
     <Title>TartarosLogger</Title>
     <Description>Basic Logger System for my projects.</Description>
     <PackageProjectUrl>https://github.com/Niko2405/TartarosLogger</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Niko2405/TartarosLogger</RepositoryUrl>
     <PackageTags>Logger</PackageTags>
-    <Version>1.6.4</Version>
+    <Version>1.7.0</Version>
     <Authors>Niko2405</Authors>
     <IsPackable>True</IsPackable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>

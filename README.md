@@ -12,7 +12,7 @@ But DEBUG can only be output if IsDebugEnabled is set to True. Each output start
 
 ### Dependencies
 
-* Recommended: Dotnet 8 - 9 Supoorted
+* Recommended: Dotnet 5 - 9 Supported
 * For Linux, MacOS and Windows
 
 ### Installing
@@ -62,9 +62,10 @@ Logger.WriteLogInFile = false;
 ```
 
 ## Version History
-
+* 1.7.0
+    * Reduce code, by using generic methods.
 * 1.6.3
-    * Change Debug color from DarkBlue to Blue
+    * Change Debug color from DarkBlue to Blue.
 
 * 1.6.4
     * Add boolean variable (WriteLogInFile) to deactivate writing logs in file.
@@ -72,4 +73,4 @@ Logger.WriteLogInFile = false;
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE.md file for details.
