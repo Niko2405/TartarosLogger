@@ -12,7 +12,7 @@ But DEBUG can only be output if IsDebugEnabled is set to True. Each output start
 
 ### Dependencies
 
-* Recommended: Dotnet 5 - 9 Supported
+* Recommended: Dotnet 5 - 10 Supported
 * For Linux, MacOS and Windows
 
 ### Installing
@@ -62,6 +62,11 @@ Logger.WriteLogInFile = false;
 ```
 
 ## Version History
+* 1.9.0
+    * Update to DotNet 10
+* 1.8.1
+    * Add overloading function, to add optional eventSource (from where comes the log)
+    * Fix new line an old platforms
 * 1.7.0
     * Reduce code, by using generic methods.
 * 1.6.3

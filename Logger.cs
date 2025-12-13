@@ -5,7 +5,7 @@
 		/// <summary>
 		/// Get current version of logger
 		/// </summary>
-		public static readonly string Version = "1.8.1";
+		public static readonly string Version = "1.9.0";
 
 		/// <summary>
 		/// Set output path for log file
