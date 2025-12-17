@@ -32,17 +32,17 @@ Logger.ResetLog();
 
 * Info log
 ```
-Logger.Info(text);
+Logger.Info(eventSource, text);
 ```
 
 * Warning log
 ```
-Logger.Warning(text);
+Logger.Warning(eventSource, text);
 ```
 
 * Error log
 ```
-Logger.Error(text);
+Logger.Error(eventSource, text);
 ```
 
 * Debug log
@@ -61,7 +61,14 @@ Logger.PrintHeader(title);
 Logger.WriteLogInFile = false;
 ```
 
+* Set log file path
+```
+Logger.LogFilePath = (e.g.) ./home/user/logs
+```
+
 ## Version History
+* 1.9.4
+    * Expand readme.md
 * 1.9.3
     * The logs must contain eventSource as an indicator of where it was called. (like Init, Core or etc.)
 * 1.9.0
