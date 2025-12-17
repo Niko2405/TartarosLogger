@@ -5,12 +5,12 @@
 		/// <summary>
 		/// Get current version of logger
 		/// </summary>
-		public static readonly string Version = "1.9.0";
+		public static readonly string Version = "1.9.3";
 
 		/// <summary>
 		/// Set output path for log file
 		/// </summary>
-		public static string LogPath { get; set; } = "./";
+		public static string LogFilePath { get; set; } = "./";
 
 		/// <summary>
 		/// Should create log file
@@ -23,26 +23,23 @@
 		public static bool IsDebugEnabled { get; set; } = false;
 
 		#region INFO
+		[Obsolete("Use Info overloading function. EventSource is important")]
 		/// <summary>
 		/// Write info log
 		/// </summary>
 		/// <param name="message">Message</param>
-		public static void Info<T>(T message)
+        public static void Info<T>(T message)
 		{
 			ResetColorsToDefault();
 			
-			Console.Write($"{GetCurrentTime()} [");
+			Console.Write($"{GetCurrentTime()}: ");
 
 			Console.ForegroundColor = ConsoleColor.DarkGreen;
-			Console.Write("INFO");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine($"]:\t{message}");
-
-			ResetColorsToDefault();
+			Console.WriteLine(message);
 
 			if (WriteLogInFile)
 			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [INFO]:\t{message}{Environment.NewLine}");
+				File.AppendAllTextAsync($"{LogFilePath}latest.log", $"{GetCurrentTime()}: {message}{Environment.NewLine}");
 			}
 		}
 
@@ -54,47 +51,40 @@
 		/// <param name="message"></param>
 		public static void Info<T>(T eventSource, T message)
 		{
-			ResetColorsToDefault();
+            ResetColorsToDefault();
 
-			Console.Write($"{GetCurrentTime()} [");
+            Console.Write($"{GetCurrentTime()} {eventSource}: ");
 
-			Console.ForegroundColor = ConsoleColor.DarkGreen;
-			Console.Write("INFO");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine($"]\t[{eventSource}]:\t{message}");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine(message);
 
-			ResetColorsToDefault();
+            if (WriteLogInFile)
+            {
+                File.AppendAllTextAsync($"{LogFilePath}latest.log", $"{GetCurrentTime()} {eventSource}: {message}{Environment.NewLine}");
+            }
+        }
+        #endregion
 
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [INFO]\t[{eventSource}]:\t{message}{Environment.NewLine}");
-			}
-		}
-		#endregion
-
-		#region WARNING
-		/// <summary>
-		/// Write warning log
-		/// </summary>
-		/// <param name="message">Message</param>
-		public static void Warn<T>(T message)
+        #region WARNING
+        [Obsolete("Use Warn overloading function. EventSource is important")]
+        /// <summary>
+        /// Write warning log
+        /// </summary>
+        /// <param name="message">Message</param>
+        public static void Warn<T>(T message)
 		{
-			ResetColorsToDefault();
+            ResetColorsToDefault();
 
-			Console.Write($"{GetCurrentTime()} [");
+            Console.Write($"{GetCurrentTime()}: ");
 
-			Console.ForegroundColor = ConsoleColor.DarkYellow;
-			Console.Write("WARN");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine($"]:\t{message}");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine(message);
 
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [WARN]:\t{message}{Environment.NewLine}");
-			}
-		}
+            if (WriteLogInFile)
+            {
+                File.AppendAllTextAsync($"{LogFilePath}latest.log", $"{GetCurrentTime()}: {message}{Environment.NewLine}");
+            }
+        }
 		
 		/// <summary>
 		/// Write warning log
@@ -104,47 +94,40 @@
 		/// <param name="message"></param>
 		public static void Warn<T>(T eventSource, T message)
 		{
-			ResetColorsToDefault();
+            ResetColorsToDefault();
 
-			Console.Write($"{GetCurrentTime()} [");
+            Console.Write($"{GetCurrentTime()} {eventSource}: ");
 
-			Console.ForegroundColor = ConsoleColor.DarkYellow;
-			Console.Write("WARN");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine($"]\t[{eventSource}]:\t{message}");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine(message);
 
-			ResetColorsToDefault();
+            if (WriteLogInFile)
+            {
+                File.AppendAllTextAsync($"{LogFilePath}latest.log", $"{GetCurrentTime()} {eventSource}: {message}{Environment.NewLine}");
+            }
+        }
+        #endregion
 
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [WARN]\t[{eventSource}]:\t{message}{Environment.NewLine}");
-			}
-		}
-		#endregion
-
-		#region ERROR
-		/// <summary>
-		/// Write error log
-		/// </summary>
-		/// <param name="message">Message</param>
-		public static void Error<T>(T message)
+        #region ERROR
+        [Obsolete("Use Error overloading function. EventSource is important")]
+        /// <summary>
+        /// Write error log
+        /// </summary>
+        /// <param name="message">Message</param>
+        public static void Error<T>(T message)
 		{
-			ResetColorsToDefault();
+            ResetColorsToDefault();
 
-			Console.Write($"{GetCurrentTime()} [");
+            Console.Write($"{GetCurrentTime()}: ");
 
-			Console.ForegroundColor = ConsoleColor.DarkRed;
-			Console.Write("ERROR");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine($"]:\t{message}");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(message);
 
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [ERROR]:\t{message}{Environment.NewLine}");
-			}
-		}
+            if (WriteLogInFile)
+            {
+                File.AppendAllTextAsync($"{LogFilePath}latest.log", $"{GetCurrentTime()}: {message}{Environment.NewLine}");
+            }
+        }
 
 		/// <summary>
 		/// Write error log
@@ -154,50 +137,43 @@
 		/// <param name="message"></param>
 		public static void Error<T>(T eventSource, T message)
 		{
-			ResetColorsToDefault();
+            ResetColorsToDefault();
 
-			Console.Write($"{GetCurrentTime()} [");
+            Console.Write($"{GetCurrentTime()} {eventSource}: ");
 
-			Console.ForegroundColor = ConsoleColor.DarkRed;
-			Console.Write("ERROR");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine($"]\t[{eventSource}]:\t{message}");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(message);
 
-			ResetColorsToDefault();
+            if (WriteLogInFile)
+            {
+                File.AppendAllTextAsync($"{LogFilePath}latest.log", $"{GetCurrentTime()} {eventSource}: {message}{Environment.NewLine}");
+            }
+        }
+        #endregion
 
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [ERROR]\t[{eventSource}]:\t{message}{Environment.NewLine}");
-			}
-		}
-		#endregion
-
-		#region DEBUG
-		/// <summary>
-		/// Write debug log
-		/// </summary>
-		/// <param name="message">Message</param>
-		public static void Debug<T>(T message)
+        #region DEBUG
+        [Obsolete("Use Debug overloading function. EventSource is important")]
+        /// <summary>
+        /// Write debug log
+        /// </summary>
+        /// <param name="message">Message</param>
+        public static void Debug<T>(T message)
 		{
 			if (!IsDebugEnabled)
 				return;
-			
-			ResetColorsToDefault();
 
-			Console.Write($"{GetCurrentTime()} [");
+            ResetColorsToDefault();
 
-			Console.ForegroundColor = ConsoleColor.Blue;
-			Console.Write("DEBUG");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine($"]:\t{message}");
+            Console.Write($"{GetCurrentTime()}: ");
 
-			ResetColorsToDefault();
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(message);
 
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [DEBUG]:\t{message}{Environment.NewLine}");
-			}
-		}
+            if (WriteLogInFile)
+            {
+                File.AppendAllTextAsync($"{LogFilePath}latest.log", $"{GetCurrentTime()}: {message}{Environment.NewLine}");
+            }
+        }
 
 		/// <summary>
 		/// Write debug log
@@ -210,22 +186,18 @@
 			if (!IsDebugEnabled)
 				return;
 
-			ResetColorsToDefault();
+            ResetColorsToDefault();
 
-			Console.Write($"{GetCurrentTime()} [");
+            Console.Write($"{GetCurrentTime()} {eventSource}: ");
 
-			Console.ForegroundColor = ConsoleColor.Blue;
-			Console.Write("DEBUG");
-			Console.ForegroundColor = ConsoleColor.White;
-			Console.WriteLine($"]\t[{eventSource}]:\t{message}");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(message);
 
-			ResetColorsToDefault();
-
-			if (WriteLogInFile)
-			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"{GetCurrentTime()} [DEBUG]\t[{eventSource}]:\t{message}{Environment.NewLine}");
-			}
-		}
+            if (WriteLogInFile)
+            {
+                File.AppendAllTextAsync($"{LogFilePath}latest.log", $"{GetCurrentTime()} {eventSource}: {message}{Environment.NewLine}");
+            }
+        }
 		#endregion
 
 
@@ -240,7 +212,7 @@
 			Console.WriteLine($"======================[ {title} ]======================");
 			if (WriteLogInFile)
 			{
-				File.AppendAllTextAsync($"{LogPath}latest.log", $"======================[ {title} ]======================{Environment.NewLine}");
+				File.AppendAllTextAsync($"{LogFilePath}latest.log", $"======================[ {title} ]======================{Environment.NewLine}");
 			}
 			ResetColorsToDefault();
 		}
@@ -252,11 +224,11 @@
 		{
 			try
 			{
-				File.Delete($"{LogPath}latest.log");
+				File.Delete($"{LogFilePath}latest.log");
 			}
 			catch (Exception e)
 			{
-				Error(e.Message);
+				Error("ConfigCore", e.Message);
 			}
 		}
 

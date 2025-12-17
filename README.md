@@ -62,6 +62,8 @@ Logger.WriteLogInFile = false;
 ```
 
 ## Version History
+* 1.9.3
+    * The logs must contain eventSource as an indicator of where it was called. (like Init, Core or etc.)
 * 1.9.0
     * Update to DotNet 10
 * 1.8.1
