@@ -22,51 +22,53 @@ But DEBUG can only be output if IsDebugEnabled is set to True. Each output start
 ### Executing program
 
 * Namespace
-```
+```cs
 using TartarosLogger;
 ```
 * Reset logger file
-```
+```cs
 Logger.ResetLog();
 ```
 
 * Info log
-```
+```cs
 Logger.Info(eventSource, text);
 ```
 
 * Warning log
-```
+```cs
 Logger.Warning(eventSource, text);
 ```
 
 * Error log
-```
+```cs
 Logger.Error(eventSource, text);
 ```
 
 * Debug log
-```
+```cs
 Logger.DebugEnabled = true;
 Logger.Debug(text);
 ```
 
 * Print a log header
-```
+```cs
 Logger.PrintHeader(title);
 ```
 
 * Deactivate LoggerFile
-```
+```cs
 Logger.WriteLogInFile = false;
 ```
 
 * Set log file path
-```
+```cs
 Logger.LogFilePath = (e.g.) ./home/user/logs
 ```
 
 ## Version History
+* 2.0.0
+    * Remove obsolete functions
 * 1.9.4
     * Expand readme.md
 * 1.9.3
