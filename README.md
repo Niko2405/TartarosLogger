@@ -37,7 +37,7 @@ Logger.Info(eventSource, text);
 
 * Warning log
 ```cs
-Logger.Warning(eventSource, text);
+Logger.Warn(eventSource, text);
 ```
 
 * Error log
@@ -67,6 +67,10 @@ Logger.LogFilePath = (e.g.) ./home/user/logs
 ```
 
 ## Version History
+* 2.0.2
+    * Add null parameters in function call (string?)
+* 2.0.1
+    * Add overloading functions (string, int, bool)
 * 2.0.0
     * Remove obsolete functions
 * 1.9.4
