@@ -12,7 +12,7 @@ But DEBUG can only be output if IsDebugEnabled is set to True. Each output start
 
 ### Dependencies
 
-* Recommended: Dotnet 5 - 10 Supported
+* Recommended: Dotnet 5 - 11 Supported
 * For Linux, MacOS and Windows
 
 ### Installing
@@ -32,23 +32,23 @@ Logger.ResetLog();
 
 * Info log
 ```cs
-Logger.Info(eventSource, text);
+Logger.Info(message);
 ```
 
 * Warning log
 ```cs
-Logger.Warn(eventSource, text);
+Logger.Warning(message);
 ```
 
 * Error log
 ```cs
-Logger.Error(eventSource, text);
+Logger.Error(message);
 ```
 
 * Debug log
 ```cs
 Logger.DebugEnabled = true;
-Logger.Debug(text);
+Logger.Debug(message);
 ```
 
 * Print a log header
@@ -67,6 +67,8 @@ Logger.LogFilePath = (e.g.) ./home/user/logs
 ```
 
 ## Version History
+* 2.1.0
+    * Remove eventSource parameter in all functions.
 * 2.0.2
     * Add null parameters in function call (string?)
 * 2.0.1
