@@ -8,7 +8,7 @@ namespace TartarosLogger
 		/// <summary>
 		/// Get current version of logger
 		/// </summary>
-		public static readonly string Version = "2.1.0";
+		public static readonly string Version = "2.1.1";
 
 		/// <summary>
 		/// Set output path for log file
@@ -86,7 +86,7 @@ namespace TartarosLogger
 		/// <param name="callerName"></param>
 		public static void Debug(string message, [CallerMemberName] string callerName = "")
 		{
-			if (IsDebugEnabled)
+			if (!IsDebugEnabled)
 			{
 				return;
 			}

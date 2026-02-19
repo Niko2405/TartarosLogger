@@ -5,14 +5,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AssemblyVersion>2.0.0</AssemblyVersion>
-    <FileVersion>2.1.0.0</FileVersion>
+    <FileVersion>2.1.1.0</FileVersion>
     <Copyright>Niko2405</Copyright>
     <Title>TartarosLogger</Title>
     <Description>Basic Logger System for my projects.</Description>
     <PackageProjectUrl>https://github.com/Niko2405/TartarosLogger</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Niko2405/TartarosLogger</RepositoryUrl>
     <PackageTags>Logger</PackageTags>
-    <Version>2.1.0</Version>
+    <Version>2.1.1</Version>
     <Authors>Niko2405</Authors>
     <IsPackable>True</IsPackable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>

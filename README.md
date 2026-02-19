@@ -67,6 +67,8 @@ Logger.LogFilePath = (e.g.) ./home/user/logs
 ```
 
 ## Version History
+* 2.1.1
+    * Fix Debug; Debug was inverted.
 * 2.1.0
     * Remove eventSource parameter in all functions.
 * 2.0.2
