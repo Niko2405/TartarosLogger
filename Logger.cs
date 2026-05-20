@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.Tracing;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace TartarosLogger
 {
@@ -8,7 +7,7 @@ namespace TartarosLogger
 		/// <summary>
 		/// Get current version of logger
 		/// </summary>
-		public static readonly string Version = "2.1.1";
+		public static readonly string Version = "2.1.2";
 
 		/// <summary>
 		/// Set output path for log file
@@ -109,7 +108,7 @@ namespace TartarosLogger
 		public static void PrintHeader(string? title)
 		{
 			Console.BackgroundColor = ConsoleColor.Black;
-			Console.ForegroundColor = ConsoleColor.Cyan;
+			Console.ForegroundColor = ConsoleColor.Magenta;
 			Console.WriteLine($"======================[ {title} ]======================");
 			if (WriteLogInFile)
 			{

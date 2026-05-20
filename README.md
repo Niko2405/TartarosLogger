@@ -67,6 +67,8 @@ Logger.LogFilePath = (e.g.) ./home/user/logs
 ```
 
 ## Version History
+* 2.1.2
+    * Change color of PrintHeader to Magenta.
 * 2.1.1
     * Fix Debug; Debug was inverted.
 * 2.1.0
